@@ -10,7 +10,7 @@ class EsempioRestContainerApplicationTests {
 
 	@Test
 	public void test1() {
-		assertEquals(5,2+2);
+		assertEquals(4,2+2);
 	}
 
 }
