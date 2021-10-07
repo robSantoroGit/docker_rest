@@ -10,7 +10,7 @@ script:
   - docker run robesantororobesantoro/docker_rest ./mvnw test
 
 after_success:
-  - docker build -t robesantororobesantoro/docker_rest -f Dockerfile_prod
+  - docker build -t robesantororobesantoro/docker_rest -f Dockerfile_prod .
 
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 
