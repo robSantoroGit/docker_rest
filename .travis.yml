@@ -11,3 +11,7 @@ script:
 
 after_success:
   - docker build -t robesantororobesantoro/docker_rest -f Dockerfile_prod
+
+  - echo "$DOCKER_PWD" | docker login -U "$DOCKER_ID" --password-stdin
+
+  - docker push robesantororobesantoro/docker_rest
