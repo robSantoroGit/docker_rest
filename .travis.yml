@@ -8,3 +8,4 @@ before_install:
 
 script:
   - docker run robesantororobesantoro/docker_rest ./mvnw test
+  
