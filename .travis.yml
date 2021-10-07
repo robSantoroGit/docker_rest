@@ -10,4 +10,4 @@ script:
   - docker run robesantororobesantoro/docker_rest ./mvnw test
 
 after_success:
-  - docker run robesantororobesantoro/docker_rest ./mvnw package -DskipTests
+  - docker build -t robesantororobesantoro/docker_rest -f Dockerfile_prod

@@ -1,0 +1,13 @@
+FROM openjdk:11-jdk-slim as base
+WORKDIR /usr/app
+ADD src ./src
+ADD .mvn/ ./.mvn
+ADD pom.xml ./
+ADD mvnw ./
+RUN chmod -R 777 .
+RUN ["./mvnw","package","-DskipTests"]
+
+FROM base
+WORKDIR /app
+COPY --from=base /usr/app/target/*.jar app.jar
+CMD [ "java","-jar","app.jar" ]
