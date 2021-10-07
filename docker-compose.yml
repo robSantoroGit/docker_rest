@@ -1,22 +1,10 @@
 version: "3.1"
 
 services:
-    rest-test:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        command: ./mvnw test
-    
-    rest-package:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        command: ./mvnw package -DskipTests
-
-    rest-web-test:
-        build:
-            context: .
-            dockerfile: Dockerfile
+    rest-web:
+        image: robesantororobesantoro/docker_rest
         ports:
             - 8181:8080
-        command: ./mvnw spring-boot:run  
+        mem_limit: 256m
+        hostname: rest-web
+    

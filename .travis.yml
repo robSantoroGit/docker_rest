@@ -15,3 +15,15 @@ after_success:
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push robesantororobesantoro/docker_rest
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'test_docker_rest'
+  env: 'Testdockerrest-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-801320686542'
+  bucket_path: 'docker-rest'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
