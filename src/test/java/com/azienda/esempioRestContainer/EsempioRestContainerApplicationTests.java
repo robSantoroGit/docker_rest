@@ -12,5 +12,10 @@ class EsempioRestContainerApplicationTests {
 	public void test1() {
 		assertEquals(4,2+2);
 	}
+	
+	@Test
+	public void test2() {
+		assertEquals(6,2*3);
+	}
 
 }
