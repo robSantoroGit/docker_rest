@@ -8,6 +8,7 @@ RUN chmod -R 777 .
 RUN ["./mvnw","package","-DskipTests"]
 
 FROM base
+EXPOSE 8080
 WORKDIR /app
 COPY --from=base /usr/app/target/*.jar app.jar
 CMD [ "java","-jar","app.jar" ]

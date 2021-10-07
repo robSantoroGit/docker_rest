@@ -5,5 +5,5 @@ ADD .mvn/ ./.mvn
 ADD pom.xml ./
 ADD mvnw ./
 RUN chmod -R 777 .
-#RUN ["./mvnw","dependency:go-offline"]
+RUN ["./mvnw","dependency:go-offline"]
 
