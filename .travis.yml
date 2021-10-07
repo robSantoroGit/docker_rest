@@ -5,7 +5,6 @@ services:
 
 before_install:
   - docker build -t robesantororobesantoro/docker_rest -f Dockerfile .
-  - chmod +x mvnw  
 
 script:
   - docker run robesantororobesantoro/docker_rest ./mvnw test
